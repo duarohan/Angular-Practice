@@ -1,0 +1,12 @@
+<div class="row">
+    <p>One Way Data-Binding</p> 
+    <div class="col-sm-2"><input type="text" (input)="onInput($event)"></div>
+    <div class="col-sm-2">Welcome to {{ fromTS }}!</div>
+    <div class="col-sm-8"></div>
+</div>  
+<div class="row">   
+  <p>Two Way Data-Binding</p>
+  <div class="col-sm-2"><input type="text" [(ngModel)]="title"></div>
+  <div class="col-sm-2">Welcome to {{ title }}!</div>
+  <div class="col-sm-8"></div>
+</div>

@@ -1,0 +1,3 @@
+<input [(ngModel)] = "input" (input)="checkEmpty(input)">
+<button [disabled]="onEmpty" (click)="submit(input)" class="btn btn-primary"> Submit</button>
+<label>{{output}}</label>

@@ -1,0 +1,6 @@
+<h3>Active Users</h3>
+<p *ngFor = "let activeUsers of ActiveUserCollection">
+    <span><a [routerLink] = "['/users',activeUsers.id,activeUsers.name]">{{activeUsers.name}}</a></span>
+    &nbsp;  
+    <span><a (click)="updateUserStatus(activeUsers.name,activeUsers.status)">{{activeUsers.status}}</a></span>
+</p>

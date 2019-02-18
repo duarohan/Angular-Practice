@@ -1,0 +1,3 @@
+<button class="btn btn-primary" (click)="togglePara()">Display Details</button>
+<p *ngIf="displayPara">Its raining heavily</p>
+<div *ngFor = "let logs of logClicks; let i  = index" [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'white'}" [ngClass] = "{whiteText : i >= 5}">{{logs}}</div>
