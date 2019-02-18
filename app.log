@@ -1,0 +1,41 @@
+<div class="column1 {{colsAlign}}">
+  <!-- <% Blogs1.forEach((post) => { %> ** to be replaced by ngFor-->
+    <div class="card q" style="width: 18rem;">
+      
+      <!-- <script> ** the post needs to be clicked
+      $(".yoIcon").click(function(){
+        var idValue = $(this).attr("id");
+        $("a#"+idValue).toggleClass("upped-the-post");
+      }); 
+      </script> -->
+      <a class= "yoIcon" id="{{post._id}}">
+        <i class="fa fa-yo fa-hand-spock-o"></i>
+      </a>
+      <!-- ** src needs to be passed image from ts file -->
+      <img class="card-img-top" src="{{post.titleImage}}" alt="Card image cap">
+      <!-- apply ngClass/ngStyle to provide color -->
+      <div class="card-img-overlay"> <span class="badge badge-pill <%=post.color%>"><%= post.type %></span></div>
+      <!--  -->
+      <div class="card-body" style="text-align:center">
+        <!-- routerLink="" -->
+        <a routerLink="/post/{{post._id }}" class="card-text">{{post.title}}</a>
+      </div>
+      <div class="shareBtnPanel">
+        <i class="fa fa-share-alt shareIcon"></i>
+        <ul class="socialSharePanel">
+          <% var url = 'https:%2F%2Fwww.' + serverName + '/post/' + post._id; var text = post.title;%>
+          <% url = url.replace(/:+/g,'%3A').replace(/\/+/g, '%2F'); text = text.replace(/\s+/g,'%20');%>
+
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u=<%=url%>" target="_blank"><i class="fa-share fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/intent/tweet?url=<%=url%>&text=<%=text%>" class= ""><i class="fa-share fa fa-twitter"></i></a></li>
+          <li><a href="https://plus.google.com/share?url=<%=url%>" class= ""><i class="fa-share fa fa-google"></i></a></li>
+          <li><a href="http://www.linkedin.com/shareArticle?mini=true&url=<%=url%>&title=<%=text%>" class= ""><i class="fa-share fa fa-linkedin"></i></a></li>
+        
+        </ul>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="text-align:center" ><%=post.dateDisplay%></li>
+      </ul>
+    </div>
+  <!-- <%})%> -->
+</div>
